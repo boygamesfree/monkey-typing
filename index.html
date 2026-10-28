@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d4aff">
+  <meta name="description" content="Monkey Typing is a fun, colorful letter-typing game for young learners. Practice the alphabet and help Milo the monkey collect bananas!">
+  <title>Monkey Typing — Letter Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Monkey Typing home">
+        <span class="brand-mark" aria-hidden="true">🐵</span>
+        <span>Monkey <b>Typing</b></span>
+      </a>
+      <div class="top-pill"><span class="pulse"></span> LETTER ADVENTURE</div>
+    </header>
+
+    <section class="hero-card" id="intro-screen" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="eyebrow">READY, SET, TYPE!</p>
+        <h1 id="intro-title">Help Milo find<br><span>the banana treasure!</span></h1>
+        <p class="intro-text">Tap or type the letter you see. Every correct letter helps Milo swing through the jungle and collect bananas!</p>
+        <div class="intro-facts">
+          <span>🔤 Letter practice</span><span>⭐ Earn points</span><span>🌴 Jungle fun</span>
+        </div>
+        <button class="primary-btn" id="start-btn">Start Game <span aria-hidden="true">➜</span></button>
+        <p class="tiny-note">Made for little learners · K–2</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="leaf leaf-one">🌿</div><div class="leaf leaf-two">🌴</div>
+        <div class="monkey-illustration">
+          <div class="tail"></div><div class="ear ear-left"></div><div class="ear ear-right"></div>
+          <div class="head"><div class="hair"></div><div class="face">
+            <div class="eye eye-left"></div><div class="eye eye-right"></div>
+            <div class="cheek cheek-left"></div><div class="cheek cheek-right"></div><div class="smile"></div>
+          </div></div>
+          <div class="body"></div><div class="arm arm-left"></div><div class="arm arm-right"></div>
+          <div class="leg leg-left"></div><div class="leg leg-right"></div>
+          <div class="belly"></div>
+        </div>
+        <div class="banana banana-one">🍌</div><div class="banana banana-two">🍌</div>
+        <div class="ground"></div>
+        <div class="art-caption">HI, I'M MILO! <span>🐒</span></div>
+      </div>
+    </section>
+
+    <section class="game-screen hidden" id="game-screen" aria-labelledby="game-title">
+      <div class="game-heading">
+        <div><p class="eyebrow">JUNGLE MISSION</p><h1 id="game-title">Catch the letters!</h1></div>
+        <button class="secondary-btn" id="home-btn" aria-label="Back to intro">↶ <span>Home</span></button>
+      </div>
+      <div class="stats">
+        <div class="stat-card"><span class="stat-icon">⭐</span><div><small>SCORE</small><strong id="score">0</strong></div></div>
+        <div class="stat-card"><span class="stat-icon">🍌</span><div><small>BANANAS</small><strong id="bananas">0</strong></div></div>
+        <div class="stat-card"><span class="stat-icon">🔥</span><div><small>STREAK</small><strong id="streak">0</strong></div></div>
+        <div class="stat-card"><span class="stat-icon">⏱️</span><div><small>TIME</small><strong><span id="time">60</span>s</strong></div></div>
+      </div>
+
+      <div class="playfield" id="playfield">
+        <div class="field-sun"></div><div class="field-cloud field-cloud-a"></div><div class="field-cloud field-cloud-b"></div>
+        <div class="field-vines">🌿　　　　　　　　　　　🌿</div>
+        <div class="target-card" id="target-card">
+          <p>TYPE THIS LETTER</p><div id="target-letter" class="target-letter">A</div>
+          <div class="target-hint">Press the matching key!</div>
+        </div>
+        <div class="game-monkey" id="game-monkey" aria-hidden="true">
+          <div class="game-tail"></div><div class="game-ear left"></div><div class="game-ear right"></div>
+          <div class="game-head"><div class="game-face"><i class="game-eye left"></i><i class="game-eye right"></i><i class="game-blush left"></i><i class="game-blush right"></i><i class="game-mouth"></i></div></div>
+          <div class="game-body"></div><div class="game-arm left"></div><div class="game-arm right"></div><div class="game-leg left"></div><div class="game-leg right"></div><div class="game-belly"></div>
+        </div>
+        <div class="banana-bunch" id="banana-bunch" aria-hidden="true">🍌</div>
+        <div class="feedback" id="feedback" aria-live="polite">Ready when you are!</div>
+        <div class="field-ground"><span>🌱</span><span>🌼</span><span>🌱</span><span>🌸</span><span>🌱</span><span>🌼</span><span>🌱</span></div>
+      </div>
+
+      <div class="keyboard-area">
+        <div class="keyboard-label"><span>⌨️ Your keyboard</span><small>Or tap the letter below</small></div>
+        <div class="letter-keys" id="letter-keys" aria-label="Letter buttons">
+          <button data-letter="A">A</button><button data-letter="B">B</button><button data-letter="C">C</button><button data-letter="D">D</button><button data-letter="E">E</button><button data-letter="F">F</button><button data-letter="G">G</button><button data-letter="H">H</button><button data-letter="I">I</button><button data-letter="J">J</button><button data-letter="K">K</button><button data-letter="L">L</button><button data-letter="M">M</button><button data-letter="N">N</button><button data-letter="O">O</button><button data-letter="P">P</button><button data-letter="Q">Q</button><button data-letter="R">R</button><button data-letter="S">S</button><button data-letter="T">T</button><button data-letter="U">U</button><button data-letter="V">V</button><button data-letter="W">W</button><button data-letter="X">X</button><button data-letter="Y">Y</button><button data-letter="Z">Z</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-screen hidden" id="result-screen" aria-labelledby="result-title">
+      <div class="result-emoji" aria-hidden="true">🏆🐵🍌</div>
+      <p class="eyebrow">JUNGLE CHAMPION</p>
+      <h1 id="result-title">Amazing typing!</h1>
+      <p class="result-copy" id="result-copy">Milo is proud of you.</p>
+      <div class="result-stats">
+        <div><small>FINAL SCORE</small><strong id="final-score">0</strong></div>
+        <div><small>BANANAS</small><strong id="final-bananas">0</strong></div>
+        <div><small>BEST STREAK</small><strong id="final-streak">0</strong></div>
+      </div>
+      <button class="primary-btn" id="play-again-btn">Play Again <span aria-hidden="true">↻</span></button>
+      <button class="text-btn" id="intro-btn">Back to intro</button>
+    </section>
+
+    <footer class="footer"><span>🐵 Monkey Typing</span><span>Little keys. Big adventures.</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
